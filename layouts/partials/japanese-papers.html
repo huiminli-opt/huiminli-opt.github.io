@@ -1,0 +1,15 @@
+{{ range slice "journal" "preprint" }}
+<section class="bibliography-group">
+  <h3>{{ if eq . "journal" }}査読付き論文{{ else }}プレプリント{{ end }}</h3>
+  <ol class="compact-citations">
+    {{ range where hugo.Data.publications "category" . }}
+    <li id="{{ .id }}" lang="en">
+      {{ range $index, $name := .authors }}{{ if $index }}, {{ end }}{{ if eq $name "Huimin Li" }}<strong>{{ $name }}</strong>{{ else }}{{ $name }}{{ end }}{{ end }}.
+      <a href="https://arxiv.org/abs/{{ .arxiv }}">{{ .title }}</a>.
+      {{ if eq .category "journal" }}<em>{{ .venue }}</em> {{ .volume }}({{ .issue }}){{ with .pages }}, {{ . }}{{ end }} ({{ .year }}).{{ else }}arXiv:{{ .arxiv }} ({{ .year }}).{{ end }}
+      <a href="https://arxiv.org/pdf/{{ .arxiv }}">[PDF]</a>{{ with .doi }} <a href="https://doi.org/{{ . }}">{{ if strings.HasPrefix . "10.48550/" }}[arXiv DOI]{{ else }}[DOI]{{ end }}</a>{{ end }}
+    </li>
+    {{ end }}
+  </ol>
+</section>
+{{ end }}

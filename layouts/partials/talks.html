@@ -1,0 +1,12 @@
+<ol class="talk-list">
+  {{ range hugo.Data.talks }}
+  <li id="talk-{{ .date }}">
+    <time datetime="{{ .date }}">{{ if $.ja }}{{ .date_ja }}{{ else }}{{ .date_label }}{{ end }}</time>
+    <div>
+      {{ if $.ja }}<h3 lang="en">{{ .title }}</h3>{{ else }}<h2>{{ .title }}</h2>{{ end }}
+      <p>{{ if $.ja }}{{ .event_ja }} · {{ .location_ja }}{{ else }}{{ .event }} · {{ .location }}{{ end }}</p>
+      <p class="coauthors">{{ if $.ja }}共著者：{{ else }}With {{ end }}{{ delimit .coauthors ", " }}.</p>
+    </div>
+  </li>
+  {{ end }}
+</ol>

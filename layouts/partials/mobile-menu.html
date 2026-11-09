@@ -1,0 +1,8 @@
+{{ $ja := eq .Params.pageLanguage "ja" }}
+<div class="mobile-menu" id="mobile-menu" aria-hidden="true" inert>
+  <div class="mobile-menu__header"><span>{{ if $ja }}メニュー{{ else }}Navigation{{ end }}</span><button class="mobile-menu__close" id="menu-close" aria-label="{{ if $ja }}メニューを閉じる{{ else }}Close menu{{ end }}">×</button></div>
+  <nav class="mobile-menu__nav" aria-label="{{ if $ja }}モバイルナビゲーション{{ else }}Mobile navigation{{ end }}">
+  {{ range .Site.Menus.main }}<a class="mobile-menu__link" href="{{ .URL | relURL }}"{{ if eq $.RelPermalink .URL }} aria-current="page"{{ end }}{{ if eq .Name "日本語" }} lang="ja"{{ end }}>{{ .Name }}</a>{{ end }}
+  </nav>
+</div>
+<div class="mobile-menu-overlay" id="mobile-menu-overlay"></div>

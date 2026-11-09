@@ -1,0 +1,11 @@
+{{ $ja := .ja }}
+{{ range slice "journal" "preprint" }}
+<section class="publication-group" aria-labelledby="{{ . }}">
+{{ if $ja }}<h3 id="{{ . }}">{{ else }}<h2 id="{{ . }}">{{ end }}{{ if eq . "journal" }}{{ if $ja }}学術論文{{ else }}Journal articles{{ end }}{{ else }}{{ if $ja }}プレプリント{{ else }}Preprints{{ end }}{{ end }}{{ if $ja }}</h3>{{ else }}</h2>{{ end }}
+<ol class="publication-list">{{ range where hugo.Data.publications "category" . }}
+  <li id="{{ .id }}">{{ if $ja }}<h4 lang="en">{{ else }}<h3>{{ end }}<a href="https://arxiv.org/abs/{{ .arxiv }}">{{ .title }}</a>{{ if $ja }}</h4>{{ else }}</h3>{{ end }}<p class="authors" lang="en">{{ range $i, $author := .authors }}{{ if $i }}, {{ end }}{{ if eq $author "Huimin Li" }}<strong>{{ $author }}</strong>{{ else }}{{ $author }}{{ end }}{{ end }}.</p>
+  <p class="publication-meta">{{ if eq .category "journal" }}<em>{{ .venue }}</em> {{ .volume }}({{ .issue }}){{ with .pages }}, {{ . }}{{ end }}, {{ .year }}.{{ else }}{{ if $ja }}プレプリント{{ else }}Preprint{{ end }}, {{ .year }}.{{ end }}</p>
+  <div class="paper-links"><a href="https://arxiv.org/abs/{{ .arxiv }}">arXiv:{{ .arxiv }}</a><a href="https://arxiv.org/pdf/{{ .arxiv }}">PDF</a>{{ with .publisher }}<a href="{{ . }}">{{ if $ja }}出版社{{ else }}Publisher{{ end }}</a>{{ end }}{{ with .doi }}<a href="https://doi.org/{{ . }}">{{ if strings.HasPrefix . "10.48550/" }}arXiv DOI{{ else }}DOI{{ end }}</a>{{ end }}</div>
+  </li>
+{{ end }}</ol></section>
+{{ end }}

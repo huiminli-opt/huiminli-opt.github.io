@@ -1,0 +1,38 @@
+{{- $ja := eq .Params.pageLanguage "ja" -}}
+<!DOCTYPE html>
+<html lang="{{ if $ja }}ja{{ else }}en{{ end }}" data-theme="light">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>{{ if .IsHome }}Huimin Li · Kyoto University{{ else }}{{ .Title }} · Huimin Li{{ end }}</title>
+  <meta name="description" content="{{ .Description | default .Site.Params.description }}">
+  <meta name="author" content="Huimin Li">
+  <meta name="color-scheme" content="light">
+  <link rel="canonical" href="{{ .Permalink }}">
+  {{ if or .IsHome $ja }}
+  <link rel="alternate" hreflang="en" href="{{ .Site.BaseURL }}">
+  <link rel="alternate" hreflang="ja" href="{{ "ja/" | absURL }}">
+  <link rel="alternate" hreflang="x-default" href="{{ .Site.BaseURL }}">
+  {{ end }}
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="{{ if .IsHome }}Huimin Li{{ else }}{{ .Title }} · Huimin Li{{ end }}">
+  <meta property="og:description" content="{{ .Description | default .Site.Params.description }}">
+  <meta property="og:url" content="{{ .Permalink }}">
+  <meta property="og:locale" content="{{ if $ja }}ja_JP{{ else }}en_US{{ end }}">
+  <link rel="icon" href="{{ "favicon.svg" | relURL }}" type="image/svg+xml">
+  {{ $main := resources.Get "css/main.css" | minify | fingerprint }}
+  {{ $custom := resources.Get "css/custom.css" | minify | fingerprint }}
+  <link rel="stylesheet" href="{{ $main.RelPermalink }}" integrity="{{ $main.Data.Integrity }}">
+  <link rel="stylesheet" href="{{ $custom.RelPermalink }}" integrity="{{ $custom.Data.Integrity }}">
+  <script type="application/ld+json">{{ dict "@context" "https://schema.org" "@type" "Person" "name" "Huimin Li" "alternateName" "李慧民" "url" .Site.BaseURL "affiliation" (dict "@type" "Organization" "name" "Kyoto University") | jsonify | safeJS }}</script>
+</head>
+<body>
+  <a class="skip-link" href="#main-content">{{ if $ja }}本文へ移動{{ else }}Skip to main content{{ end }}</a>
+  {{ partial "header.html" . }}
+  {{ partial "mobile-menu.html" . }}
+  <main id="main-content">{{ block "main" . }}{{ end }}</main>
+  {{ partial "footer.html" . }}
+  {{ $js := resources.Get "js/main.js" | minify | fingerprint }}
+  <script src="{{ $js.RelPermalink }}" integrity="{{ $js.Data.Integrity }}" defer></script>
+</body>
+</html>

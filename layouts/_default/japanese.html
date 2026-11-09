@@ -1,0 +1,44 @@
+{{ define "main" }}
+<article class="site-width page-content japanese-page">
+  <header class="page-heading">
+    <h1>{{ hugo.Data.profile.name_ja }} <span class="name-roman" lang="en">{{ hugo.Data.profile.name }}</span></h1>
+    {{ .Content }}
+    <p><a href="mailto:{{ hugo.Data.profile.email }}">{{ hugo.Data.profile.email }}</a></p>
+  </header>
+
+  <section id="publications-ja" aria-labelledby="papers-heading-ja">
+    <h2 id="papers-heading-ja">発表論文</h2>
+    {{ partial "japanese-papers.html" . }}
+  </section>
+
+  {{ with hugo.Data.talks }}
+  <section id="talks-ja" aria-labelledby="talks-heading-ja">
+    <h2 id="talks-heading-ja">学会発表</h2>
+    <details>
+      <summary>発表一覧（{{ len . }}件）</summary>
+      {{ partial "talks.html" (dict "site" $.Site "ja" true) }}
+    </details>
+  </section>
+  {{ end }}
+
+  <section id="activities-ja" aria-labelledby="activities-heading-ja">
+    <h2 id="activities-heading-ja">研究・教育活動</h2>
+    <details>
+      <summary>共同研究・教育経験・研究支援</summary>
+      <dl>
+        <dt>共同研究</dt>
+        <dd><a href="https://mobility.amp.i.kyoto-u.ac.jp/">京都大学とトヨタ自動車の共同研究プロジェクト</a>に参加。モビリティシステムのための数理最適化手法を研究。</dd>
+        <dt>教育経験</dt>
+        <dd>京都大学「最適化入門」ティーチング・アシスタント（2025年10月～2026年3月、担当教員：山下信雄教授）。</dd>
+        <dt>研究支援</dt>
+        <dd>京都大学 SPRING プログラム（科学技術振興機構による支援）、2024年10月～2027年9月。</dd>
+      </dl>
+    </details>
+  </section>
+
+  <section id="awards-ja" aria-labelledby="awards-heading-ja">
+    <h2 id="awards-heading-ja">受賞</h2>
+    {{ partial "awards.html" (dict "site" .Site "ja" true) }}
+  </section>
+</article>
+{{ end }}

@@ -1,0 +1,6 @@
+{{ define "main" }}
+<article class="site-width page-content">
+  <header class="page-heading"><h1>{{ .Title }}</h1></header>
+  {{ partial "publications.html" (dict "site" .Site "ja" false) }}
+</article>
+{{ end }}

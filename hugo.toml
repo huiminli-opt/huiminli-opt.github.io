@@ -1,0 +1,46 @@
+baseURL = 'https://huiminli-opt.github.io/'
+locale = 'en-US'
+title = 'Huimin Li'
+theme = 'academia'
+enableRobotsTXT = true
+disableKinds = ['taxonomy', 'term', 'RSS']
+buildDrafts = false
+timeZone = 'Asia/Tokyo'
+
+[params]
+author = 'Huimin Li'
+description = 'Huimin Li, Ph.D. candidate in mathematical optimization at Kyoto University. Research on optimality conditions, nonlinear conic optimization, and robust optimization.'
+portrait = '/images/huimin-li.png'
+
+[[menus.main]]
+name = 'Home'
+url = '/'
+weight = 10
+[[menus.main]]
+name = 'Publications'
+url = '/publications/'
+weight = 20
+[[menus.main]]
+name = 'Presentations'
+url = '/presentations/'
+weight = 30
+[[menus.main]]
+name = '日本語'
+url = '/ja/'
+weight = 40
+
+[markup.goldmark.renderer]
+unsafe = false
+[markup.goldmark.extensions.passthrough]
+enable = true
+[markup.goldmark.extensions.passthrough.delimiters]
+block = [['\[', '\]'], ['$$', '$$']]
+inline = [['\(', '\)']]
+[markup.tableOfContents]
+startLevel = 2
+endLevel = 2
+[outputs]
+home = ['HTML']
+page = ['HTML']
+[caches.images]
+dir = ':cacheDir/images'

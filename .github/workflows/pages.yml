@@ -1,0 +1,63 @@
+name: Build and publish academic website
+
+on:
+  workflow_dispatch:
+    inputs:
+      publish:
+        description: 'Publish the website to GitHub Pages'
+        required: true
+        default: false
+        type: boolean
+
+permissions:
+  contents: read
+
+concurrency:
+  group: academic-pages
+  cancel-in-progress: false
+
+env:
+  HUGO_VERSION: '0.168.0'
+  TZ: Asia/Tokyo
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v7
+        with:
+          persist-credentials: false
+      - name: Install pinned Hugo
+        shell: bash
+        run: |
+          curl --fail --location --silent --show-error --output "$RUNNER_TEMP/hugo.tar.gz" "https://github.com/gohugoio/hugo/releases/download/v${HUGO_VERSION}/hugo_${HUGO_VERSION}_linux-amd64.tar.gz"
+          curl --fail --location --silent --show-error --output "$RUNNER_TEMP/hugo_checksums.txt" "https://github.com/gohugoio/hugo/releases/download/v${HUGO_VERSION}/hugo_${HUGO_VERSION}_checksums.txt"
+          EXPECTED=$(awk -v file="hugo_${HUGO_VERSION}_linux-amd64.tar.gz" '$2 == file {print $1}' "$RUNNER_TEMP/hugo_checksums.txt")
+          test -n "$EXPECTED"
+          printf '%s  %s\n' "$EXPECTED" "$RUNNER_TEMP/hugo.tar.gz" | sha256sum --check
+          mkdir -p "$RUNNER_TEMP/hugo-bin"
+          tar -xzf "$RUNNER_TEMP/hugo.tar.gz" -C "$RUNNER_TEMP/hugo-bin" hugo
+          echo "$RUNNER_TEMP/hugo-bin" >> "$GITHUB_PATH"
+      - name: Build website
+        run: hugo --minify --panicOnWarning
+      - name: Upload Pages artifact
+        uses: actions/upload-pages-artifact@v5
+        with:
+          path: public
+  deploy:
+    if: inputs.publish == true && github.repository == 'huiminli-opt/huiminli-opt.github.io'
+    needs: build
+    runs-on: ubuntu-latest
+    permissions:
+      pages: write
+      id-token: write
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Configure GitHub Pages
+        uses: actions/configure-pages@v6
+      - name: Deploy website
+        id: deployment
+        uses: actions/deploy-pages@v5

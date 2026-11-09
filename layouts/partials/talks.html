@@ -1,11 +1,18 @@
 <ol class="talk-list">
-  {{ range hugo.Data.talks }}
+  {{ range .talks }}
   <li id="talk-{{ .date }}">
     <time datetime="{{ .date }}">{{ if $.ja }}{{ .date_ja }}{{ else }}{{ .date_label }}{{ end }}</time>
     <div>
-      {{ if $.ja }}<h3 lang="en">{{ .title }}</h3>{{ else }}<h2>{{ .title }}</h2>{{ end }}
+      {{ if eq .type "Invited talk" }}
+        <p class="talk-type"><strong>{{ if $.ja }}招待講演{{ else }}Invited talk{{ end }}</strong></p>
+      {{ end }}
+      {{ if $.ja }}
+        {{ with .title_ja }}<h4>{{ . }}</h4>{{ else }}<h4 lang="en">{{ .title }}</h4>{{ end }}
+      {{ else }}<h2>{{ .title }}</h2>{{ end }}
       <p>{{ if $.ja }}{{ .event_ja }} · {{ .location_ja }}{{ else }}{{ .event }} · {{ .location }}{{ end }}</p>
-      <p class="coauthors">{{ if $.ja }}共著者：{{ else }}With {{ end }}{{ delimit .coauthors ", " }}.</p>
+      {{ with .coauthors }}
+        <p class="coauthors">{{ if $.ja }}共著者：{{ else }}With {{ end }}{{ delimit . ", " }}.</p>
+      {{ end }}
     </div>
   </li>
   {{ end }}

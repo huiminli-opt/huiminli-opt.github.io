@@ -1,5 +1,20 @@
 [
   {
+    "date": "2026-09-26",
+    "date_label": "26 Sep 2026",
+    "date_ja": "2026年9月26日",
+    "title": "Approximate Karush-Kuhn-Tucker 2 conditions for nonlinear semidefinite optimization problems",
+    "title_ja": "非線形半正定値最適化問題に対する近似KKT2条件について",
+    "coauthors": [],
+    "event": "Bridging Optimization Theory and Numerical Analysis: New Developments for Nonconvex and Nonsmooth Problems",
+    "event_ja": "IMI 共同利用・共同研究「最適化理論と数値解析の融合：非凸・非平滑問題への新たな展開」",
+    "location": "Kyushu University",
+    "location_ja": "九州大学",
+    "type": "Invited talk",
+    "source": "https://joint.imi.kyushu-u.ac.jp/post-20909/",
+    "scope": "domestic"
+  },
+  {
     "date": "2026-09-11",
     "date_label": "11 Sep 2026",
     "date_ja": "2026年9月11日",
@@ -12,7 +27,8 @@
     "location": "Kyoto",
     "location_ja": "京都",
     "type": "Contributed talk",
-    "source": "https://www-optima.amp.i.kyoto-u.ac.jp/eng/presentations.html"
+    "source": "https://www-optima.amp.i.kyoto-u.ac.jp/eng/presentations.html",
+    "scope": "domestic"
   },
   {
     "date": "2026-09-01",
@@ -27,7 +43,8 @@
     "location": "Tokyo",
     "location_ja": "東京",
     "type": "Contributed talk",
-    "source": "https://www-optima.amp.i.kyoto-u.ac.jp/eng/presentations.html"
+    "source": "https://www-optima.amp.i.kyoto-u.ac.jp/eng/presentations.html",
+    "scope": "domestic"
   },
   {
     "date": "2026-06-05",
@@ -43,7 +60,8 @@
     "location": "Edinburgh",
     "location_ja": "エディンバラ",
     "type": "Contributed talk",
-    "source": "https://www-optima.amp.i.kyoto-u.ac.jp/eng/presentations.html"
+    "source": "https://www-optima.amp.i.kyoto-u.ac.jp/eng/presentations.html",
+    "scope": "international"
   },
   {
     "date": "2025-03-06",
@@ -60,7 +78,8 @@
     "location": "Tokyo",
     "location_ja": "東京",
     "type": "Contributed talk",
-    "source": "https://www-optima.amp.i.kyoto-u.ac.jp/eng/presentations.html"
+    "source": "https://www-optima.amp.i.kyoto-u.ac.jp/eng/presentations.html",
+    "scope": "domestic"
   },
   {
     "date": "2024-09-10",
@@ -76,7 +95,8 @@
     "location": "Nagoya",
     "location_ja": "名古屋",
     "type": "Contributed talk",
-    "source": "https://www-optima.amp.i.kyoto-u.ac.jp/eng/presentations.html"
+    "source": "https://www-optima.amp.i.kyoto-u.ac.jp/eng/presentations.html",
+    "scope": "domestic"
   },
   {
     "date": "2024-08-27",
@@ -92,7 +112,8 @@
     "location": "Kyoto",
     "location_ja": "京都",
     "type": "Contributed talk",
-    "source": "https://www-optima.amp.i.kyoto-u.ac.jp/eng/presentations.html"
+    "source": "https://www-optima.amp.i.kyoto-u.ac.jp/eng/presentations.html",
+    "scope": "domestic"
   },
   {
     "date": "2024-06-30",
@@ -108,7 +129,8 @@
     "location": "Macau",
     "location_ja": "マカオ",
     "type": "Contributed talk",
-    "source": "https://www-optima.amp.i.kyoto-u.ac.jp/eng/presentations.html"
+    "source": "https://www-optima.amp.i.kyoto-u.ac.jp/eng/presentations.html",
+    "scope": "international"
   },
   {
     "date": "2024-03-07",
@@ -124,6 +146,7 @@
     "location": "Ibaraki",
     "location_ja": "茨城",
     "type": "Contributed talk",
-    "source": "https://www-optima.amp.i.kyoto-u.ac.jp/eng/presentations.html"
+    "source": "https://www-optima.amp.i.kyoto-u.ac.jp/eng/presentations.html",
+    "scope": "domestic"
   }
 ]

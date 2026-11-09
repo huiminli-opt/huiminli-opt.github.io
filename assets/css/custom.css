@@ -84,8 +84,10 @@ button { touch-action: manipulation; }
 .talk-list { list-style: none; padding: 0; margin: 20px 0 0; }
 .talk-list > li { display: grid; grid-template-columns: 120px 1fr; gap: 22px; margin: 0 0 27px; }
 .talk-list time { color: #64717a; font-size: 13px; padding-top: 3px; }
-.page-content .talk-list :is(h2,h3) { border: 0; padding: 0; font-family: var(--font-sans); margin: 0 0 5px; font-size: 16px; font-weight: 550; }
+.page-content .talk-list :is(h2,h4) { border: 0; padding: 0; font-family: var(--font-sans); margin: 0 0 5px; font-size: 16px; font-weight: 550; }
+.page-content .talk-list h4 { line-height: 1.55; }
 .talk-list p { font-size: 14px; margin-bottom: 3px; }
+.talk-list .talk-type { color: var(--color-accent); font-size: 13px; }
 .talk-list .coauthors { font-size: 13px; color: #65717b; }
 .japanese-page { line-height: 1.95; }
 .japanese-page .page-heading h1 { font-family: "Yu Mincho", "Hiragino Mincho ProN", serif; font-size: 38px; }

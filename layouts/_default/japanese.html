@@ -11,12 +11,24 @@
     {{ partial "japanese-papers.html" . }}
   </section>
 
-  {{ with hugo.Data.talks }}
+  {{ $talks := hugo.Data.talks }}
+  {{ with $talks }}
+  {{ range . }}
+    {{ if not (in (slice "international" "domestic") (default "" .scope)) }}
+      {{ errorf "Set scope to international or domestic for presentation %q (%s)." .title .date }}
+    {{ end }}
+  {{ end }}
   <section id="talks-ja" aria-labelledby="talks-heading-ja">
     <h2 id="talks-heading-ja">学会発表</h2>
     <details>
       <summary>発表一覧（{{ len . }}件）</summary>
-      {{ partial "talks.html" (dict "site" $.Site "ja" true) }}
+      {{ range slice (dict "scope" "international" "heading" "国際会議") (dict "scope" "domestic" "heading" "国内学会・研究集会") }}
+        {{ $heading := .heading }}
+        {{ with where $talks "scope" .scope }}
+          <h3>{{ $heading }}</h3>
+          {{ partial "talks.html" (dict "talks" . "ja" true) }}
+        {{ end }}
+      {{ end }}
     </details>
   </section>
   {{ end }}

@@ -1,6 +1,6 @@
 {{ define "main" }}
 <article class="site-width page-content">
   <header class="page-heading"><h1>{{ .Title }}</h1></header>
-  {{ partial "talks.html" (dict "site" .Site "ja" false) }}
+  {{ partial "talks.html" (dict "talks" hugo.Data.talks "ja" false) }}
 </article>
 {{ end }}

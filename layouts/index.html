@@ -1,0 +1,56 @@
+{{ define "main" }}
+<div class="home-width">
+  <section class="profile" aria-labelledby="profile-name">
+    {{ with .Site.Params.portrait }}
+    <img class="profile__image" src="{{ . | relURL }}" alt="Huimin Li" width="168" height="168" fetchpriority="high">
+    {{ else }}
+    <div class="portrait-placeholder" role="img" aria-label="Space reserved for Huimin Li's portrait"><span>Portrait</span></div>
+    {{ end }}
+    <h1 class="profile__name" id="profile-name">Huimin Li</h1>
+    <p class="profile__title">Ph.D. Candidate</p>
+    <p class="profile__institution">Graduate School of Informatics<br>Kyoto University</p>
+    <div class="profile__bio">{{ .Content }}</div>
+    <div class="profile-links">
+      <a href="mailto:{{ hugo.Data.profile.email }}">{{ hugo.Data.profile.email }}</a>
+      <span aria-hidden="true">·</span>
+      {{ with hugo.Data.profile.linkedin }}
+      <a href="{{ . }}">LinkedIn</a>
+      {{ else }}
+      <span class="pending-profile">LinkedIn</span>
+      {{ end }}
+    </div>
+  </section>
+
+  <section class="home-section" aria-labelledby="interests">
+    <h2 id="interests">Research interests</h2>
+    <ul class="interest-list">
+      {{ range hugo.Data.profile.interests }}<li>{{ . }}</li>{{ end }}
+    </ul>
+  </section>
+
+  <section class="home-section" aria-labelledby="project">
+    <h2 id="project">Project</h2>
+    <p>As part of the <a href="https://mobility.amp.i.kyoto-u.ac.jp/en/top-en/">Kyoto University–Toyota collaborative mobility project</a>, I study how to model uncertainty in parameters that must remain positive. Our <a href="/publications/#tanaka2026uncertainty">preprint</a> develops an uncertainty set that preserves positivity and yields tractable robust optimization models.</p>
+  </section>
+
+  <section class="home-section" aria-labelledby="news">
+    <h2 id="news">Recent news</h2>
+    <ul class="dated-list">
+      {{ range hugo.Data.news }}
+      <li><time datetime="{{ .date }}">{{ .label }}</time><a href="{{ .url }}">{{ .text }}</a></li>
+      {{ end }}
+    </ul>
+  </section>
+
+  <section class="home-section" aria-labelledby="experience">
+    <h2 id="experience">Teaching &amp; funding</h2>
+    <p><strong>Teaching Assistant</strong>, Introduction to Optimization (最適化入門), Kyoto University, October 2025–March 2026. Instructor: Nobuo Yamashita.</p>
+    <p><strong>Kyoto University SPRING Program</strong>, supported by the Japan Science and Technology Agency (JST), October 2024–September 2027.</p>
+  </section>
+
+  <section class="home-section" aria-labelledby="awards">
+    <h2 id="awards">Awards</h2>
+    {{ partial "awards.html" (dict "site" .Site "ja" false) }}
+  </section>
+</div>
+{{ end }}

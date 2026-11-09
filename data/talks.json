@@ -1,0 +1,129 @@
+[
+  {
+    "date": "2026-09-11",
+    "date_label": "11 Sep 2026",
+    "date_ja": "2026年9月11日",
+    "title": "A reformulation of the nonlinear exponential cone optimization problem",
+    "coauthors": [
+      "Ellen H. Fukuda"
+    ],
+    "event": "Operations Research Society of Japan — Fall Conference 2026",
+    "event_ja": "日本オペレーションズ・リサーチ学会2026年秋季研究発表会",
+    "location": "Kyoto",
+    "location_ja": "京都",
+    "type": "Contributed talk",
+    "source": "https://www-optima.amp.i.kyoto-u.ac.jp/eng/presentations.html"
+  },
+  {
+    "date": "2026-09-01",
+    "date_label": "1 Sep 2026",
+    "date_ja": "2026年9月1日",
+    "title": "Optimality conditions for nonlinear exponential cone optimization via slack variables",
+    "coauthors": [
+      "Ellen H. Fukuda"
+    ],
+    "event": "Summer School on Continuous Optimization and Related Fields 2026",
+    "event_ja": "連続最適化および関連分野に関する夏季学校2026",
+    "location": "Tokyo",
+    "location_ja": "東京",
+    "type": "Contributed talk",
+    "source": "https://www-optima.amp.i.kyoto-u.ac.jp/eng/presentations.html"
+  },
+  {
+    "date": "2026-06-05",
+    "date_label": "5 Jun 2026",
+    "date_ja": "2026年6月5日",
+    "title": "Second-order Approximate KKT Conditions for Nonlinear Semidefinite Optimization Problems",
+    "coauthors": [
+      "Yuya Yamakawa",
+      "Ellen H. Fukuda"
+    ],
+    "event": "SIAM Conference on Optimization 2026",
+    "event_ja": "SIAM Conference on Optimization 2026",
+    "location": "Edinburgh",
+    "location_ja": "エディンバラ",
+    "type": "Contributed talk",
+    "source": "https://www-optima.amp.i.kyoto-u.ac.jp/eng/presentations.html"
+  },
+  {
+    "date": "2025-03-06",
+    "date_label": "6 Mar 2025",
+    "date_ja": "2025年3月6日",
+    "title": "Strong second-order approximate KKT conditions for nonlinear optimization problems",
+    "coauthors": [
+      "Yuya Yamakawa",
+      "Ellen H. Fukuda",
+      "Nobuo Yamashita"
+    ],
+    "event": "Operations Research Society of Japan — Spring Conference 2025",
+    "event_ja": "日本オペレーションズ・リサーチ学会2025年春季研究発表会",
+    "location": "Tokyo",
+    "location_ja": "東京",
+    "type": "Contributed talk",
+    "source": "https://www-optima.amp.i.kyoto-u.ac.jp/eng/presentations.html"
+  },
+  {
+    "date": "2024-09-10",
+    "date_label": "10 Sep 2024",
+    "date_ja": "2024年9月10日",
+    "title": "On second-order sequential optimality conditions for nonlinear semidefinite optimization",
+    "coauthors": [
+      "Yuya Yamakawa",
+      "Ellen H. Fukuda"
+    ],
+    "event": "Operations Research Society of Japan — Fall Conference 2024",
+    "event_ja": "日本オペレーションズ・リサーチ学会2024年秋季研究発表会",
+    "location": "Nagoya",
+    "location_ja": "名古屋",
+    "type": "Contributed talk",
+    "source": "https://www-optima.amp.i.kyoto-u.ac.jp/eng/presentations.html"
+  },
+  {
+    "date": "2024-08-27",
+    "date_label": "27 Aug 2024",
+    "date_ja": "2024年8月27日",
+    "title": "On second-order sequential optimality conditions for nonlinear programming problems",
+    "coauthors": [
+      "Yuya Yamakawa",
+      "Ellen H. Fukuda"
+    ],
+    "event": "RIMS Symposium: Advances in Mathematical Optimization and Related Fields",
+    "event_ja": "RIMS共同研究（公開型）：数理最適化の進展とその周辺",
+    "location": "Kyoto",
+    "location_ja": "京都",
+    "type": "Contributed talk",
+    "source": "https://www-optima.amp.i.kyoto-u.ac.jp/eng/presentations.html"
+  },
+  {
+    "date": "2024-06-30",
+    "date_label": "30 Jun 2024",
+    "date_ja": "2024年6月30日",
+    "title": "A strong second-order optimality condition for nonlinear semidefinite optimization",
+    "coauthors": [
+      "Yuya Yamakawa",
+      "Ellen H. Fukuda"
+    ],
+    "event": "17th SIAM East Asian Section Conference",
+    "event_ja": "17th SIAM East Asian Section Conference",
+    "location": "Macau",
+    "location_ja": "マカオ",
+    "type": "Contributed talk",
+    "source": "https://www-optima.amp.i.kyoto-u.ac.jp/eng/presentations.html"
+  },
+  {
+    "date": "2024-03-07",
+    "date_label": "7 Mar 2024",
+    "date_ja": "2024年3月7日",
+    "title": "A strong second-order optimality condition for nonlinear semidefinite optimization",
+    "coauthors": [
+      "Yuya Yamakawa",
+      "Ellen H. Fukuda"
+    ],
+    "event": "Operations Research Society of Japan — Spring Conference 2024",
+    "event_ja": "日本オペレーションズ・リサーチ学会2024年春季研究発表会",
+    "location": "Ibaraki",
+    "location_ja": "茨城",
+    "type": "Contributed talk",
+    "source": "https://www-optima.amp.i.kyoto-u.ac.jp/eng/presentations.html"
+  }
+]

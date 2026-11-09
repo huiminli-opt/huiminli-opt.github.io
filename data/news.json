@@ -1,0 +1,26 @@
+[
+  {
+    "date": "2026-11-06",
+    "label": "November 2026",
+    "label_ja": "2026年11月",
+    "text": "New preprint: A Smooth Equality Reformulation of Nonlinear Exponential Cone Optimization.",
+    "text_ja": "プレプリント「A Smooth Equality Reformulation of Nonlinear Exponential Cone Optimization」をarXivで公開。",
+    "url": "https://arxiv.org/abs/2611.09108"
+  },
+  {
+    "date": "2026-09",
+    "label": "September 2026",
+    "label_ja": "2026年9月",
+    "text": "Presentation: A reformulation of the nonlinear exponential cone optimization problem (ORSJ Fall Conference 2026, Kyoto).",
+    "text_ja": "日本オペレーションズ・リサーチ学会2026年秋季研究発表会（京都）で「A reformulation of the nonlinear exponential cone optimization problem」を発表。",
+    "url": "/presentations/#talk-2026-09-11"
+  },
+  {
+    "date": "2026-04",
+    "label": "April 2026",
+    "label_ja": "2026年4月",
+    "text": "New preprint: An uncertainty model for positive-valued parameters with application to robust optimization.",
+    "text_ja": "プレプリント「An uncertainty model for positive-valued parameters with application to robust optimization」をarXivで公開。",
+    "url": "https://arxiv.org/abs/2604.25393"
+  }
+]

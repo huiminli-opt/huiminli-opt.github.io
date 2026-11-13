@@ -1,20 +1,29 @@
+{{ $formatLabels := dict "oral" (cond .ja "口頭発表" "Oral presentation") "poster" (cond .ja "ポスター発表" "Poster presentation") }}
 <ol class="talk-list">
   {{ range .talks }}
+  {{ $formatLabel := index $formatLabels (default "" .format) }}
+  {{ if not $formatLabel }}
+    {{ errorf "Set format to oral or poster for presentation %q (%s)." .title .date }}
+  {{ end }}
   <li id="talk-{{ .date }}">
     <time datetime="{{ .date }}">{{ if $.ja }}{{ .date_ja }}{{ else }}{{ .date_label }}{{ end }}</time>
     <div>
-      {{ if eq .type "Invited talk" }}
+      {{ if .invited }}
         <p class="talk-type"><strong>{{ if $.ja }}招待講演{{ else }}Invited talk{{ end }}</strong></p>
       {{ end }}
       {{ if $.ja }}
         {{ with .title_ja }}<h4>{{ . }}</h4>{{ else }}<h4 lang="en">{{ .title }}</h4>{{ end }}
       {{ else }}<h2>{{ .title }}</h2>{{ end }}
       <p>{{ if $.ja }}{{ .event_ja }} · {{ .location_ja }}{{ else }}{{ .event }} · {{ .location }}{{ end }}</p>
-      {{ with .award_id }}
-        {{ with index (where hugo.Data.awards "id" .) 0 }}
-          <p>{{ if $.ja }}口頭発表（<a href="{{ .url_ja }}"><strong>{{ .name_ja }}</strong></a>）{{ else }}Oral presentation (<a href="{{ .url }}"><strong>{{ .name }}</strong></a>){{ with .url_language }} <span>({{ . }})</span>{{ end }}{{ end }}</p>
-        {{ end }}
-      {{ end }}
+      <p>{{ $formatLabel }}{{ with .award_id }}
+        {{- with index (where hugo.Data.awards "id" .) 0 }}
+          {{- if $.ja -}}
+            （<a href="{{ .url_ja }}"><strong>{{ .name_ja }}</strong></a>）
+          {{- else -}}
+            {{ " (" }}<a href="{{ .url }}"><strong>{{ .name }}</strong></a>){{ with .url_language }} <span>({{ . }})</span>{{ end }}
+          {{- end }}
+        {{- end }}
+      {{- end }}</p>
       {{ with .coauthors }}
         <p class="coauthors">{{ if $.ja }}共著者：{{ else }}With {{ end }}{{ delimit . ", " }}.</p>
       {{ end }}

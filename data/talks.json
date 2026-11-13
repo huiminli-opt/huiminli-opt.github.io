@@ -10,7 +10,8 @@
     "event_ja": "IMI 共同利用・共同研究「最適化理論と数値解析の融合：非凸・非平滑問題への新たな展開」",
     "location": "Kyushu University",
     "location_ja": "九州大学",
-    "type": "Invited talk",
+    "format": "oral",
+    "invited": true,
     "source": "https://joint.imi.kyushu-u.ac.jp/post-20909/",
     "scope": "domestic"
   },
@@ -26,7 +27,8 @@
     "event_ja": "日本オペレーションズ・リサーチ学会2026年秋季研究発表会",
     "location": "Kyoto",
     "location_ja": "京都",
-    "type": "Contributed talk",
+    "format": "oral",
+    "invited": false,
     "source": "https://www-optima.amp.i.kyoto-u.ac.jp/eng/presentations.html",
     "scope": "domestic",
     "award_id": "orsj2026fall"
@@ -43,7 +45,8 @@
     "event_ja": "連続最適化および関連分野に関する夏季学校2026",
     "location": "Tokyo",
     "location_ja": "東京",
-    "type": "Contributed talk",
+    "format": "poster",
+    "invited": false,
     "source": "https://www-optima.amp.i.kyoto-u.ac.jp/eng/presentations.html",
     "scope": "domestic"
   },
@@ -60,7 +63,8 @@
     "event_ja": "SIAM Conference on Optimization 2026",
     "location": "Edinburgh",
     "location_ja": "エディンバラ",
-    "type": "Contributed talk",
+    "format": "oral",
+    "invited": false,
     "source": "https://www-optima.amp.i.kyoto-u.ac.jp/eng/presentations.html",
     "scope": "international"
   },
@@ -78,7 +82,8 @@
     "event_ja": "日本オペレーションズ・リサーチ学会2025年春季研究発表会",
     "location": "Tokyo",
     "location_ja": "東京",
-    "type": "Contributed talk",
+    "format": "oral",
+    "invited": false,
     "source": "https://www-optima.amp.i.kyoto-u.ac.jp/eng/presentations.html",
     "scope": "domestic"
   },
@@ -95,7 +100,8 @@
     "event_ja": "日本オペレーションズ・リサーチ学会2024年秋季研究発表会",
     "location": "Nagoya",
     "location_ja": "名古屋",
-    "type": "Contributed talk",
+    "format": "oral",
+    "invited": false,
     "source": "https://www-optima.amp.i.kyoto-u.ac.jp/eng/presentations.html",
     "scope": "domestic"
   },
@@ -112,7 +118,8 @@
     "event_ja": "RIMS共同研究（公開型）：数理最適化の進展とその周辺",
     "location": "Kyoto",
     "location_ja": "京都",
-    "type": "Contributed talk",
+    "format": "oral",
+    "invited": false,
     "source": "https://www-optima.amp.i.kyoto-u.ac.jp/eng/presentations.html",
     "scope": "domestic"
   },
@@ -129,7 +136,8 @@
     "event_ja": "17th SIAM East Asian Section Conference",
     "location": "Macau",
     "location_ja": "マカオ",
-    "type": "Contributed talk",
+    "format": "oral",
+    "invited": false,
     "source": "https://www-optima.amp.i.kyoto-u.ac.jp/eng/presentations.html",
     "scope": "international"
   },
@@ -146,7 +154,8 @@
     "event_ja": "日本オペレーションズ・リサーチ学会2024年春季研究発表会",
     "location": "Ibaraki",
     "location_ja": "茨城",
-    "type": "Contributed talk",
+    "format": "oral",
+    "invited": false,
     "source": "https://www-optima.amp.i.kyoto-u.ac.jp/eng/presentations.html",
     "scope": "domestic"
   }

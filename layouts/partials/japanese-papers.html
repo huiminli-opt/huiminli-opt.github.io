@@ -6,7 +6,13 @@
     <li id="{{ .id }}" lang="en">
       {{ range $index, $name := .authors }}{{ if $index }}, {{ end }}{{ if eq $name "Huimin Li" }}<strong>{{ $name }}</strong>{{ else }}{{ $name }}{{ end }}{{ end }}.
       <a href="{{ with .publisher }}{{ . }}{{ else }}https://arxiv.org/abs/{{ .arxiv }}{{ end }}">{{ .title }}</a>.
-      {{ if eq .category "journal" }}<em>{{ .venue }}</em> {{ .volume }}({{ .issue }}){{ with .pages }}, {{ . }}{{ end }} ({{ .year }}).{{ else }}arXiv:{{ .arxiv }} ({{ .year }}).{{ end }}
+      {{ if eq .category "journal" }}
+        <em>{{ .venue }}</em>
+        {{- if eq .status "accepted" -}}
+          , to appear.
+        {{- else }} {{ .volume }}({{ .issue }}){{ with .pages }}, {{ . }}{{ end }} ({{ .year }}).
+        {{- end }}
+      {{ else }}arXiv:{{ .arxiv }} ({{ .year }}).{{ end }}
       <a href="https://arxiv.org/pdf/{{ .arxiv }}">[PDF]</a>{{ with .doi }} <a href="https://doi.org/{{ . }}">{{ if strings.HasPrefix . "10.48550/" }}[arXiv DOI]{{ else }}[DOI]{{ end }}</a>{{ end }}
     </li>
     {{ end }}

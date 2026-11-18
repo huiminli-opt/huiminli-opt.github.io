@@ -33,14 +33,30 @@
     <p>As part of the <a href="https://mobility.amp.i.kyoto-u.ac.jp/en/top-en/">Kyoto University–Toyota collaborative mobility project</a>, I study how to model uncertainty in parameters that must remain positive. Our <a href="/publications/#tanaka2026uncertainty">preprint</a> develops an uncertainty set that preserves positivity and yields tractable robust optimization models.</p>
   </section>
 
+  {{ $buildDate := time.In "Asia/Tokyo" time.Now }}
+  {{ $today := $buildDate.Format "2006-01-02" }}
+  {{ $oldestDate := ($buildDate.AddDate -1 0 0).Format "2006-01-02" }}
+  {{ $recentNews := slice }}
+  {{ range sort hugo.Data.news "date" "desc" }}
+    {{ $cutoff := $oldestDate }}
+    {{/* A month-only entry stays eligible through its anniversary month. */}}
+    {{ if eq (len .date) 7 }}
+      {{ $cutoff = substr $oldestDate 0 7 }}
+    {{ end }}
+    {{ if and (ge .date $cutoff) (le .date $today) }}
+      {{ $recentNews = $recentNews | append . }}
+    {{ end }}
+  {{ end }}
+  {{ with first 5 $recentNews }}
   <section class="home-section" aria-labelledby="news">
     <h2 id="news">Recent news</h2>
     <ul class="dated-list">
-      {{ range hugo.Data.news }}
+      {{ range . }}
       <li><time datetime="{{ .date }}">{{ .label }}</time><a href="{{ .url }}">{{ .text }}</a></li>
       {{ end }}
     </ul>
   </section>
+  {{ end }}
 
   <section class="home-section" aria-labelledby="experience">
     <h2 id="experience">Teaching &amp; funding</h2>
